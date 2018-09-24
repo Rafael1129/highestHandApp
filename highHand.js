@@ -103,6 +103,33 @@ function straightFlush(hand) {
     return true;
 }
 
+function fourOfKind(hand){
+
+}
+
+function fullHouse(hand){
+
+}
+
+function flush(hand){
+
+}
+
+function straight(hand){
+
+}
+
+function threeOfKind(hand){
+
+}
+
+function twoPair(hand){
+
+}
+
+function onePair(hand){
+    
+}
 
 module.exports ={
     
