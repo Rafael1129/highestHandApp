@@ -54,9 +54,6 @@ var cardValue = {
 'AH': 51,
 'AS': 52};
 
-
-
-
 function convertCards(items){
   for (key in cardValue){    
       for (i = 0; i < items.length; i++){
@@ -66,7 +63,6 @@ function convertCards(items){
         }
       }
   }
-  
   console.log(hand);
   return hand;
 }
@@ -74,7 +70,7 @@ function convertCards(items){
 function getSuitsCount(items, suits){
     for (i = 0; i < items.length; i++){
        for (suit in suits){
-         // console.log(items[i]);
+
          if (items[i].includes(suit))
          {
             suits[suit] = suits[suit] + 1;
@@ -102,6 +98,7 @@ function printAssign(handName){
 }
 function printHand(hand, suits){
     var handName = '';
+
     if (fiveOfKind(hand)){handName = printAssign('Five of a kind')}
     if (straightFlush(hand)){handName = printAssign('Straight flush')}
     if (fourOfKind(hand)){handName = printAssign('Four of a kind')}
@@ -111,7 +108,7 @@ function printHand(hand, suits){
     if (threeOfKind(hand)){handName = printAssign('Three of a kind')}
     if (twoPair(hand)){handName = printAssign('Two pair')}
     if (onePair(hand)){handName = printAssign('One pair')}
-    else {handName = printAssign('High card') }
+    if (highCard(hand)){handName = printAssign('High card') }
     return handName;
 }
 
@@ -152,7 +149,6 @@ function fullHouse(hand){
 function flush(suits){
     // all same suit
     for (suit in suits){
-        console.log(suits[suit]);
         if (suits[suit] == 5)
         {
             return true;
@@ -195,6 +191,10 @@ function onePair(hand){
         }
     }
     if ( count == 2){ return true;} else {return false;}
+}
+
+function highCard(hand){
+    return true;
 }
 
 module.exports = {
