@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/%16Rafael1129/highestHandApp#readme",
   "dependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "request": "^2.88.0"
   }
 }
