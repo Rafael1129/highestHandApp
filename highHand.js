@@ -65,12 +65,6 @@ function convertCards(items, cardValue, hand){
         }
       }
   }
-//   cardValue.forEach(function (key){
-//     for (card in items){
-//                 if (card == key){
-//                     hand.push(value)
-//                 }}
-//   });
   console.log(hand);
   return hand;
 }
@@ -96,7 +90,7 @@ function fiveOfKind(hand) {
 function straightFlush(hand) {
 
     for(var i = 0; i < hand.length - 1; i++) {
-        if(hand[i] !== (hand[i+1] - 1)) {
+        if(hand[i] !== (hand[i+1] - 4)) {
             return false;
         }
     }
@@ -118,7 +112,13 @@ function fullHouse(hand){
 }
 
 function flush(hand){
-
+    for(var i = 0; i < hand.length - 1; i++) {
+        if(hand[i] !== (hand[i+1] - 4)) {
+            return false;
+        }
+    }
+    return true;
+  
 }
 
 function straight(hand){
@@ -144,7 +144,12 @@ function twoPair(hand){
 }
 
 function onePair(hand){
-
+    for(var i = 0; i < hand.length - 1; i++) {
+        if(hand[i] == hand[i+1]) {
+            count++;
+        }
+    }
+    if ( count == 2){ return true;} else {return false;}
 }
 
 module.exports = {
