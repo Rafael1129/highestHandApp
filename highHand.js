@@ -140,7 +140,7 @@ function threeOfKind(hand){
 }
 
 function twoPair(hand){
-
+ 
 }
 
 function onePair(hand){
