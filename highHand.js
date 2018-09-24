@@ -104,7 +104,13 @@ function straightFlush(hand) {
 }
 
 function fourOfKind(hand){
-
+    //var count = 0;
+    for(var i = 0; i < hand.length - 1; i++) {
+        if(hand[i] == hand[i+1]) {
+            count++;
+        }
+    }
+    if ( count == 4){ return true;} else {return false;}
 }
 
 function fullHouse(hand){
@@ -116,11 +122,21 @@ function flush(hand){
 }
 
 function straight(hand){
-
+    for(var i = 0; i < hand.length - 1; i++) {
+        if(hand[i] !== (hand[i+1] - 1)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function threeOfKind(hand){
-
+    for(var i = 0; i < hand.length - 1; i++) {
+        if(hand[i] == hand[i+1]) {
+            count++;
+        }
+    }
+    if ( count == 3){ return true;} else {return false;}
 }
 
 function twoPair(hand){
@@ -128,10 +144,10 @@ function twoPair(hand){
 }
 
 function onePair(hand){
-    
+
 }
 
-module.exports ={
+module.exports = {
     
     highestHand: highestHand
 };
