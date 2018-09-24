@@ -3,7 +3,7 @@ var deckId = '';
 var EventEmitter = require("events").EventEmitter;
 var deck = new EventEmitter();
 var highHand = require('./highHand');
-var items = {};
+var items = [];
 
 function shuffle(API){
   request(API, { json: true }, (err, res, body) => {
@@ -21,22 +21,11 @@ function drawFive(deckId){
   request('https://deckofcardsapi.com/api/deck/' + deckId + '/draw/?count=5', { json: true }, (err, res, body) => {
         if (err) { return console.log(err); }
         body.cards.forEach(function (card) {
-           console.log(card.value + ' of ' + card.suit);
-           
-           if (!card.value in items)
-           {
-            items[card.value] = new Array();
-              items[card.value].push(card.suit);
-           }
-           else{
-              
-              items[card.value] = card.suit;
-           }
+          console.log(card.value + ' of ' + card.suit);
+          items.push(card.code);
       });
       highHand.highestHand(items);
-      // console.log("lets check array!")
-      // console.log(items);
-       
+
       });
 }
 
