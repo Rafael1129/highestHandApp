@@ -1,0 +1,19 @@
+{
+  "name": "shuffleapp",
+  "version": "1.0.0",
+  "description": "deck shuffling app that indentifies highest hand drawn\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+  "main": "main.js",
+  "scripts": {
+    "test": "highHand.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/%16Rafael1129/highestHandApp.git"
+  },
+  "author": "Rafael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/%16Rafael1129/highestHandApp/issues"
+  },
+  "homepage": "https://github.com/%16Rafael1129/highestHandApp#readme"
+}
