@@ -2,6 +2,18 @@
 
 Instructions:
 
+* Make sure that you have Node, Git and npm installed.
+After npm has beeen installed run the following commands to install "require" and "mocha"(for testing)
+>npm install require
+>npm install mocha
+
+* use node to execute the program:
+  - on desired directory, run `git pull https://github.com/Rafael1129/highestHandApp.git` to pull app from git repository
+  - on the terminal, navigate to project directory and run command `node main.js`
+  - app creates new decks(default 6 for poker), and draws 5 cards. The contents of the cards and the highest hand possible are printed to the console.
+
+* to execute tests run `npm test`
+
 
 Assumptions while writing code:
 #1 Assumed at beggining of project that the Node app should have a UI, which caused some time to be wasted implementing some UI work with React. By the intructions, printing to console was sufficient, so I started the app from scratch without using a web framework.

@@ -1,4 +1,5 @@
 var hand = [];
+var suits = {'C':0,'D':0,'H':0,'S':0};
 var cardValue = {
 '2C': 1,
 '2D': 2,
@@ -53,29 +54,65 @@ var cardValue = {
 'AH': 51,
 'AS': 52};
 
-function convertCards(items, cardValue, hand){
-  for (key in cardValue){
-      //console.log(cardValue[key]);
-     
+
+
+
+function convertCards(items){
+  for (key in cardValue){    
       for (i = 0; i < items.length; i++){
-        // console.log(items[i]);
         if (items[i] == key){
-            console.log(cardValue[key]);
+            
             hand.push(cardValue[key])
         }
       }
   }
+  
   console.log(hand);
   return hand;
 }
+
+function getSuitsCount(items, suits){
+    for (i = 0; i < items.length; i++){
+       for (suit in suits){
+         // console.log(items[i]);
+         if (items[i].includes(suit))
+         {
+            suits[suit] = suits[suit] + 1;
+         }
+       
+        }
+      }
+      console.log(suits);
+      return suits;
+}
 function highestHand(items){
-    console.log("Hang in there :)");
+    if (items.length != 5){
+        let error = 'Hand drawn should have five cards'
+        console.log(error);
+        return error;}
     console.log(items);
-    hand = convertCards(items, cardValue, hand);
+    suits = getSuitsCount(items, suits);
+    hand = convertCards(items);
+    return printHand(hand, suits);
 }
 
-function printHand(hand){
-   
+function printAssign(handName){
+    console.log(handName);
+    return handName;
+}
+function printHand(hand, suits){
+    var handName = '';
+    if (fiveOfKind(hand)){handName = printAssign('Five of a kind')}
+    if (straightFlush(hand)){handName = printAssign('Straight flush')}
+    if (fourOfKind(hand)){handName = printAssign('Four of a kind')}
+    if (fullHouse(hand)){handName = printAssign('Full house')}
+    if (flush(suits)){handName = printAssign('Flush')}
+    if (straight(hand)){handName = printAssign('Straight')}
+    if (threeOfKind(hand)){handName = printAssign('Three of a kind')}
+    if (twoPair(hand)){handName = printAssign('Two pair')}
+    if (onePair(hand)){handName = printAssign('One pair')}
+    else {handName = printAssign('High card') }
+    return handName;
 }
 
 function fiveOfKind(hand) {
@@ -98,7 +135,7 @@ function straightFlush(hand) {
 }
 
 function fourOfKind(hand){
-    //var count = 0;
+    var count = 0;
     for(var i = 0; i < hand.length - 1; i++) {
         if(hand[i] == hand[i+1]) {
             count++;
@@ -108,20 +145,25 @@ function fourOfKind(hand){
 }
 
 function fullHouse(hand){
+    // 3 values same and other 2 same as each other
 
 }
 
-function flush(hand){
-    for(var i = 0; i < hand.length - 1; i++) {
-        if(hand[i] !== (hand[i+1] - 4)) {
-            return false;
+function flush(suits){
+    // all same suit
+    for (suit in suits){
+        console.log(suits[suit]);
+        if (suits[suit] == 5)
+        {
+            return true;
         }
     }
-    return true;
+    return false;
   
 }
 
 function straight(hand){
+    // sequence
     for(var i = 0; i < hand.length - 1; i++) {
         if(hand[i] !== (hand[i+1] - 1)) {
             return false;
@@ -131,6 +173,7 @@ function straight(hand){
 }
 
 function threeOfKind(hand){
+    var count = 0;
     for(var i = 0; i < hand.length - 1; i++) {
         if(hand[i] == hand[i+1]) {
             count++;
@@ -140,10 +183,12 @@ function threeOfKind(hand){
 }
 
 function twoPair(hand){
- 
+//  2 of same and other 2 of same
+  return false;
 }
 
 function onePair(hand){
+    var count = 0;
     for(var i = 0; i < hand.length - 1; i++) {
         if(hand[i] == hand[i+1]) {
             count++;
