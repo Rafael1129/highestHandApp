@@ -79,6 +79,7 @@ function getSuitsCount(items){
       }
       return suits;
 }
+
 function highestHand(items){
     if (items.length != 5){
         let error = 'Hand drawn should have five cards'
@@ -106,7 +107,6 @@ function printHand(hand, suits){
     if (twoPair(hand)){return printAssign('Two pair')}
     if (onePair(hand)){return printAssign('One pair')}
     if (highCard(hand)){return printAssign('High card') }
-
 }
 
 function fiveOfKind(hand) {
@@ -153,7 +153,6 @@ function flush(suits){
         }
     }
     return false;
-  
 }
 
 function straight(hand){

@@ -3,7 +3,7 @@
 const API = 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=';
 const DECK_COUNT = '6';
 const CARD_COUNT = '5';
-var shuffleDraw = require('./shuffleDraw');
+const shuffleDraw = require('./shuffleDraw');
 
 shuffleDraw.shuffle(API+DECK_COUNT);
 console.log('Your cards are:');
