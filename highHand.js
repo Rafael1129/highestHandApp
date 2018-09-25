@@ -111,7 +111,7 @@ function printHand(hand, suits){
 
 function fiveOfKind(hand) {
 
-    for(var i = 0; i < hand.length - 1; i++) {
+    for(var i = 0; i < hand.length; i++) {
         if(hand[i] !== hand[i+1]) {
             return false;
         }
@@ -121,7 +121,7 @@ function fiveOfKind(hand) {
 
 function straightFlush(hand) {
 
-    for(var i = 0; i < hand.length - 1; i++) {
+    for(var i = 0; i < hand.length; i++) {
         if(hand[i] !== (hand[i+1] - 4)) {
             return false;
         }
@@ -131,7 +131,7 @@ function straightFlush(hand) {
 
 function fourOfKind(hand){
     var count = 0;
-    for(var i = 0; i < hand.length - 1; i++) {
+    for(var i = 0; i < hand.length; i++) {
         if(hand[i] == hand[i+1]) {
             count++;
         }
@@ -157,7 +157,7 @@ function flush(suits){
 
 function straight(hand){
     // sequence
-    for(var i = 0; i < hand.length - 1; i++) {
+    for(var i = 0; i < hand.length; i++) {
         if(hand[i] !== (hand[i+1] - 1)) {
             return false;
         }
@@ -167,7 +167,7 @@ function straight(hand){
 
 function threeOfKind(hand){
     var count = 0;
-    for(var i = 0; i < hand.length - 1; i++) {
+    for(var i = 0; i < hand.length; i++) {
         if(hand[i] == hand[i+1]) {
             count++;
         }
@@ -182,7 +182,7 @@ function twoPair(hand){
 
 function onePair(hand){
     var count = 0;
-    for(var i = 0; i < hand.length - 1; i++) {
+    for(var i = 0; i < hand.length; i++) {
         if(hand[i] == hand[i+1]) {
             count++;
         }
