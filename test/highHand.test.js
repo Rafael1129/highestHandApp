@@ -2,7 +2,7 @@ var assert = require('assert');
 var highHand = require('../highHand');
 var items = [];
 
-describe('highestHand', function() {
+describe('highHand', function() {
   describe('highestHand()', function() {
 
     it('should throw error when hand does not have five cards', function() {
