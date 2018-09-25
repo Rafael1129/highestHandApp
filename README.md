@@ -7,7 +7,7 @@ After npm has beeen installed run the following commands to install "require" an
 `npm install require && npm install mocha`
 
 * use node to execute the program:
-  - on desired directory, run `git pull https://github.com/Rafael1129/highestHandApp.git` to pull app from git repository
+  - on desired directory, run `git clone https://github.com/Rafael1129/highestHandApp.git` to clone app from git repository
   - on the terminal, navigate to project directory and run command `node main.js`
   - app creates new decks(default 6 for poker), and draws 5 cards. The contents of the cards and the highest hand possible are printed to the console.
 
