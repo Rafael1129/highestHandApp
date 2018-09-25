@@ -113,7 +113,6 @@ function fiveOfKind(hand) {
 
     for(var i = 0; i < hand.length - 1; i++) {
         if(hand[i] !== hand[i+1]) {
-            console.log(hand[i] +'/'+ hand[i+1]);
             return false;
         }
     }
