@@ -94,24 +94,26 @@ function printAssign(handName){
     return handName;
 }
 function printHand(hand, suits){
-    var handName = '';
+ 
     console.log('The highest hand is:');
-    if (fiveOfKind(hand)){handName = printAssign('Five of a kind')}
-    if (straightFlush(hand)){handName = printAssign('Straight flush')}
-    if (fourOfKind(hand)){handName = printAssign('Four of a kind')}
-    if (fullHouse(hand)){handName = printAssign('Full house')}
-    if (flush(suits)){handName = printAssign('Flush')}
-    if (straight(hand)){handName = printAssign('Straight')}
-    if (threeOfKind(hand)){handName = printAssign('Three of a kind')}
-    if (twoPair(hand)){handName = printAssign('Two pair')}
-    if (onePair(hand)){handName = printAssign('One pair')}
-    if (highCard(hand)){handName = printAssign('High card') }
-    return handName;
+    if (fiveOfKind(hand)){return printAssign('Five of a kind')}
+    if (straightFlush(hand)){return printAssign('Straight flush')}
+    if (fourOfKind(hand)){return printAssign('Four of a kind')}
+    if (fullHouse(hand)){return printAssign('Full house')}
+    if (flush(suits)){return printAssign('Flush')}
+    if (straight(hand)){return printAssign('Straight')}
+    if (threeOfKind(hand)){return printAssign('Three of a kind')}
+    if (twoPair(hand)){return printAssign('Two pair')}
+    if (onePair(hand)){return printAssign('One pair')}
+    if (highCard(hand)){return printAssign('High card') }
+
 }
 
 function fiveOfKind(hand) {
+
     for(var i = 0; i < hand.length - 1; i++) {
         if(hand[i] !== hand[i+1]) {
+            console.log(hand[i] +'/'+ hand[i+1]);
             return false;
         }
     }
