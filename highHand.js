@@ -63,11 +63,10 @@ function convertCards(items){
         }
       }
   }
-  console.log(hand);
   return hand;
 }
 
-function getSuitsCount(items, suits){
+function getSuitsCount(items){
     for (i = 0; i < items.length; i++){
        for (suit in suits){
 
@@ -78,7 +77,6 @@ function getSuitsCount(items, suits){
        
         }
       }
-      console.log(suits);
       return suits;
 }
 function highestHand(items){
@@ -86,8 +84,7 @@ function highestHand(items){
         let error = 'Hand drawn should have five cards'
         console.log(error);
         return error;}
-    console.log(items);
-    suits = getSuitsCount(items, suits);
+    suits = getSuitsCount(items);
     hand = convertCards(items);
     return printHand(hand, suits);
 }
@@ -98,7 +95,7 @@ function printAssign(handName){
 }
 function printHand(hand, suits){
     var handName = '';
-
+    console.log('The highest hand is:');
     if (fiveOfKind(hand)){handName = printAssign('Five of a kind')}
     if (straightFlush(hand)){handName = printAssign('Straight flush')}
     if (fourOfKind(hand)){handName = printAssign('Four of a kind')}

@@ -18,9 +18,9 @@ deck.on('shuffled', function () {
   deck.emit('ready_to_draw');
   return deckId;
 });
-function drawFive(){
+function drawCards(CARD_COUNT){
   deck.on('ready_to_draw', function () {
-  request('https://deckofcardsapi.com/api/deck/' + deckId + '/draw/?count=5', { json: true }, (err, res, body) => {
+  request('https://deckofcardsapi.com/api/deck/' + deckId + '/draw/?count=' + CARD_COUNT, { json: true }, (err, res, body) => {
         if (err) { return console.log(err); }
         body.cards.forEach(function (card) {
           console.log(card.value + ' of ' + card.suit);
@@ -35,9 +35,7 @@ function drawFive(){
 module.exports ={
     
     shuffle: shuffle,
-
-    deckId: deckId,
-    drawFive: drawFive
+    drawCards: drawCards
 };
 
 
