@@ -1,6 +1,6 @@
 var hand = [];
 var suits = {'C':0,'D':0,'H':0,'S':0};
-var cardValue = {
+var card_value = {
 '2C': 1,
 '2D': 2,
 '2H': 3,
@@ -55,11 +55,11 @@ var cardValue = {
 'AS': 52};
 
 function convertCards(items){
-  for (key in cardValue){    
+  for (key in card_value){    
       for (i = 0; i < items.length; i++){
         if (items[i] == key){
             
-            hand.push(cardValue[key])
+            hand.push(card_value[key])
         }
       }
   }

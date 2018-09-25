@@ -62,18 +62,18 @@ describe('highHand', function() {
   });
   describe('convertCards()', function() {
     var items = [ 'JS', 'AD', '5C', '4S', '3D' ];
-
+    var converted_cards = [ 6, 12, 13, 40, 50 ];
     it('should convert hand to numbers', function() {
 
-      assert.equal(highHand.convertCards(items),[ 6, 12, 13, 40, 50 ]);
+      assert.equal(highHand.convertCards(items),converted_cards);
     });
   });
   describe('getSuitsCount()', function() {
     var items = [ '2S', '4S', 'JH', 'KS', 'QS' ];
-
+    var suits_count = { 'C': 0, 'D': 0, 'H': 1, 'S': 4 }
     it('should return the count of each suit', function() {
 
-      assert.equal(highHand.getSuitsCount(items),{ C: 0, D: 0, H: 1, S: 4 });
+      assert.equal(highHand.getSuitsCount(items),suits_count);
     });
   });
 });
